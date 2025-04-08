@@ -869,6 +869,8 @@ namespace UnityEngine.Rendering.Universal
 #if ENABLE_VR && ENABLE_XR_MODULE
         public static readonly int previousViewProjectionNoJitterStereo = Shader.PropertyToID("_PrevViewProjMatrixStereo");
         public static readonly int viewProjectionNoJitterStereo = Shader.PropertyToID("_NonJitteredViewProjMatrixStereo");
+        public static readonly int previousViewProjectionStereoLegacy = Shader.PropertyToID("unity_StereoMatrixPrevVP");
+
 #endif
 
         public static readonly int blitTexture = Shader.PropertyToID("_BlitTexture");
@@ -1439,6 +1441,9 @@ namespace UnityEngine.Rendering.Universal
 
         /// <summary> Keyword used for enable alpha output. Used in post processing. </summary>
         public const string _ENABLE_ALPHA_OUTPUT = "_ENABLE_ALPHA_OUTPUT";
+
+        /// <summary> Keyword used for application space warp for XR devices. </summary>
+        public const string APPLICATION_SPACE_WARP_MOTION = "APPLICATION_SPACE_WARP_MOTION";
     }
 
     public sealed partial class UniversalRenderPipeline

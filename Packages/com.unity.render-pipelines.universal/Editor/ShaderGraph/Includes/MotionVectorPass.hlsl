@@ -175,6 +175,10 @@ float4 frag(
     LODFadeCrossFade(input.positionCS);
 #endif
 
+#if defined(APPLICATION_SPACE_WARP_MOTION)
+    return float4(CalcAswNdcMotionVectorFromCsPositions(mvInput.positionCSNoJitter, mvInput.previousPositionCSNoJitter), 1);
+#else
     return float4(CalcNdcMotionVectorFromCsPositions(mvInput.positionCSNoJitter, mvInput.previousPositionCSNoJitter), 0, 0);
+#endif
 }
 #endif
