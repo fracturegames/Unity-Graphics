@@ -200,6 +200,7 @@ namespace UnityEngine.Rendering.Universal
 
             // Setup the default XR valid depth flag
             passData.hasValidXRDepth = false;
+            passData.subsampleDepthKeyword = m_SubsampleDepthKeyword;
         }
 
         /// <summary>
