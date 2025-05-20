@@ -417,7 +417,7 @@ namespace UnityEngine.Rendering.Universal
     }
 
 #if UNITY_EDITOR
-    internal class WarnUsingNonRenderGraph
+    /*internal class WarnUsingNonRenderGraph
     {
         [InitializeOnLoadMethod]
         internal static void EmitConsoleWarning()
@@ -426,7 +426,7 @@ namespace UnityEngine.Rendering.Universal
             if (rgs != null && rgs.enableRenderCompatibilityMode)
                 Debug.LogWarning(DeprecationMessage.CompatibilityScriptingAPIConsoleWarning);
         }
-    }
+    }*/
 #endif
 
     /// <summary>
