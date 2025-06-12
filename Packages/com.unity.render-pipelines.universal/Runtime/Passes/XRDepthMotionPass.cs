@@ -365,6 +365,7 @@ namespace UnityEngine.Rendering.Universal
 
         // Object Motion for both static and dynamic objects, fill stencil for mv filled pixels.
         cmd.SetKeyword(m_ApplicationSpaceWarpMotionKeyword, true);
+        XRDepthMotionRenderers.RendererDepthMotionVectors(cmd);
         cmd.DrawRendererList(objMotionRendererList);
         cmd.SetKeyword(m_ApplicationSpaceWarpMotionKeyword, false);
 

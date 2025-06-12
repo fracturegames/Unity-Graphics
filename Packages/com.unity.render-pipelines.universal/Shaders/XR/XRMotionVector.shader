@@ -26,7 +26,7 @@ Shader "Hidden/Universal Render Pipeline/XR/XRMotionVector"
             }
 
             HLSLPROGRAM
-            #pragma target 3.5
+            #pragma target 5.0
 
             #pragma vertex Vert
             #pragma fragment Frag
@@ -68,8 +68,8 @@ Shader "Hidden/Universal Render Pipeline/XR/XRMotionVector"
                 float4 posWS = mul(UNITY_MATRIX_I_VP, output.position);
 
                 // Multiply with current and previous non-jittered view projection
-                output.posCS = mul(_NonJitteredViewProjMatrix, posWS.xyz);
-                output.prevPosCS = mul(_PrevViewProjMatrix, posWS.xyz);
+                output.posCS = mul(_NonJitteredViewProjMatrix, float4(posWS.xyz,1));
+                output.prevPosCS = mul(_PrevViewProjMatrix, float4(posWS.xyz, 1));
 
                 return output;
             }
