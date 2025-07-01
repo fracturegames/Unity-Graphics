@@ -648,6 +648,8 @@ namespace UnityEngine.Rendering.Universal
             return false;
         }
 
+        public bool XRDepthMotionPassAllowed { get; set; }
+
         /// <inheritdoc />
         [Obsolete(DeprecationMessage.CompatibilityScriptingAPIObsolete, false)]
         public override void Setup(ScriptableRenderContext context, ref RenderingData renderingData)
@@ -1487,7 +1489,7 @@ namespace UnityEngine.Rendering.Universal
                         EnqueuePass(m_XRCopyDepthPass);
                     }
 
-                    if (cameraData.xr.hasMotionVectorPass && m_XRDepthMotionPass != null)
+                    if (XRDepthMotionPassAllowed && cameraData.xr.hasMotionVectorPass && m_XRDepthMotionPass != null)
                     {
                         m_XRDepthMotionPass.Update(ref cameraData);
                         m_XRDepthMotionPass.Setup(in cameraData, m_ActiveCameraColorAttachment);
