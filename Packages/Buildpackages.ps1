@@ -4,6 +4,7 @@
 $packages = @(
     "com.unity.render-pipelines.core",
     "com.unity.render-pipelines.universal"
+	"com.unity.shadergraph"
 )
 
 # Output directory for tarballs (creates "Zipped" folder inside current directory)
